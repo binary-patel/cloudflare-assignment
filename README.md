@@ -1,3 +1,7 @@
+
+<h1>Working URL: https://cf-ai-swe-job-hunter.shubhamdp2012.workers.dev/</h1>
+
+
 # cf_ai_swe_job_hunter
 
 An edge-hosted SWE job scanner and broken ATS link repair tool built on Cloudflare Workers, Workflows, Durable Objects, D1, and Workers AI (`@cf/meta/llama-3.3-70b-instruct-fp8-fast`).
