@@ -1,0 +1,42 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cf-ai-swe-job-hunter",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-04-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "ai": {
+    "binding": "AI"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "JOB_HUNTER_AGENT",
+        "class_name": "JobHunterAgentDO"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["JobHunterAgentDO"]
+    }
+  ],
+  "workflows": [
+    {
+      "name": "swe-job-scan-workflow",
+      "binding": "JOB_SCAN_WORKFLOW",
+      "class_name": "JobScanWorkflow"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "JOBS_DB",
+      "database_name": "swe_jobs_db",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ]
+}
